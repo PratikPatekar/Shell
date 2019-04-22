@@ -32,58 +32,6 @@
 		}
 	}
 
-/*
-
-	void socketClient(char *ipaddr,char *p){
-		int csocket;
-		char buffer[1024];
-		csocket = socket(AF_INET,SOCK_STREAM,0);
-		if(csocket == -1){
-			printf("Could not create a socket");
-		}
-		struct sockaddr_in client;
-		int q;
-		client.sin_addr.s_addr = inet_addr(ipaddr);
-		client.sin_family = AF_INET;
-		client.sin_port = htons(atoi(p));
-		q = connect(csocket,(struct sockaddr *)&client,sizeof(client));
-		if(q==-1){
-			printf("could not connect\n");
-		}else if(q==0){
-			printf("Connected\n");
-		}
-		else{
-			perror("Error");
-			exit(errno);
-		}
-	
-	}
-
-	void socketServer(char *p){
-		int ssocket,msocket;
-		char buffer[1024];
-		ssocket = socket(AF_INET,SOCK_STREAM,0);
-				if(ssocket == -1){
-					printf("Could not create a socket");
-				}
-		struct sockaddr_in server;
-		struct sockaddr_storage serverStorage;
-		socklen_t addr_size;
-		ssocket = socket(AF_INET,SOCK_STREAM,0);
-		int q;
-		server.sin_addr.s_addr = INADDR_ANY;
-		server.sin_family = AF_INET;
-		server.sin_port = htons(atoi(p));
-		if (bind(ssocket, (struct sockaddr *) &server, sizeof(server)) < 0){
-			        printf("ERROR: on binding");
-				}
-		listen(ssocket, 5);	
-		addr_size = sizeof serverStorage;
-		msocket = accept(ssocket,(struct sockaddr *)&serverStorage,&addr_size);
-			
-	}
-
-*/
 	
 	int socketClient(char *ipAddress, int portno) {
 	    int sockfd, n,s;
